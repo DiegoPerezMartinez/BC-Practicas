@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crowdfunding DApp</title>
+  <link rel="icon" type="image/png" href="icono.png">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="frontend.js" defer></script>
+  <link rel="stylesheet" href="frontend.css">
+
+</head>
+
+<body>
+    <h1 style="text-align:center;">Crowdfunding DApp</h1>
+    
+    <!--  Conexión -->
+    <div style="text-align:center; margin-bottom: 20px;">
+        <button onclick="connectWallet()">Conectar MetaMask</button>
+        <p id="walletStatus" style="text-align:center;"></p>
+    </div>
+
+    <!--  Información del proyecto -->
+    <div class="card info">
+        <h2>Información del Proyecto</h2>
+        <p><strong>Meta:</strong> <span id="goal">-</span> WEI</p>
+        <p><strong>Total Recaudado:</strong> <span id="total">-</span> WEI</p>
+        <p><strong>Dinero Restante:</strong> <span id="moneyLeft">-</span> WEI</p>
+        <p><strong>Contribuidores:</strong> <span id="contributorsCount">-</span></p>
+        <p><strong>Tu Contribución:</strong> <span id="myContribution">-</span> WEI</p>
+        <p><strong>Tiempo restante: </strong><span id="timeleft"></span></p>
+    </div>
+
+    <!--  Consultas rápidas -->
+    <div style="text-align:center; margin-bottom: 20px;">
+        <button onclick="withdraw()">Retirar Fondos (owner)</button>
+        <p id="infoStatus" style="margin-top: 10px; font-weight: bold;"></p>
+    </div>
+
+    <!--  Contribuir -->
+    <div style="text-align:center; margin-bottom: 20px;">
+        <h2>Contribuir</h2>
+        <input type="text" id="cantidadWEI" placeholder="Cantidad en WEI">
+        <p><button onclick="contribute()">Contribuir</button></p>
+        <p id="contributeStatus" style="margin-top: 10px;"></p>
+    </div>
+
+    <!--  Consultar contribuidor -->
+    <div style="text-align:center; margin-bottom: 20px;">
+        <h2>Mostrar contribuidor por índice</h2>
+        <input type="text" id="indice" placeholder="Pon un índice">
+        <p><button onclick="showContributor()">Consultar</button></p>
+        <p id="contributorStatus" style="margin-top: 10px;"></p>
+    </div>
+
+</body>
+
+</html>
